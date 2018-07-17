@@ -1,0 +1,66 @@
+06/20/2018 08:13:59 PM - LoginPage - INFO: Element found with locator: Login and  locatorType: link
+06/20/2018 08:14:07 PM - LoginPage - INFO: Clicked on element with locator: Login locatorType: link
+06/20/2018 08:14:07 PM - LoginPage - INFO: Element found with locator: user_email and  locatorType: id
+06/20/2018 08:14:08 PM - LoginPage - INFO: Sent data on element with locator: user_email locatorType: id
+06/20/2018 08:14:08 PM - LoginPage - INFO: Element found with locator: user_password and  locatorType: id
+06/20/2018 08:14:08 PM - LoginPage - INFO: Sent data on element with locator: user_password locatorType: id
+06/20/2018 08:14:08 PM - LoginPage - INFO: Element found with locator: commit and  locatorType: name
+06/20/2018 08:14:10 PM - LoginPage - INFO: Clicked on element with locator: commit locatorType: name
+06/20/2018 08:14:10 PM - LoginPage - INFO: Element found with locator: .alert-danger and  locatorType: css
+06/20/2018 08:14:10 PM - LoginPage - INFO: Element Found by locator:.alert-danger and locatorType:css
+06/20/2018 08:14:10 PM - Status - INFO: ### VERIFICATION SUCCESSFUL :: + Login was successful
+06/20/2018 08:14:10 PM - Status - INFO: test_invalidLogin### Test Successful
+06/20/2018 08:14:10 PM - LoginPage - INFO: Element found with locator: Login and  locatorType: link
+06/20/2018 08:14:13 PM - LoginPage - INFO: Clicked on element with locator: Login locatorType: link
+06/20/2018 08:14:13 PM - LoginPage - INFO: Element found with locator: user_email and  locatorType: id
+06/20/2018 08:14:13 PM - LoginPage - INFO: Sent data on element with locator: user_email locatorType: id
+06/20/2018 08:14:13 PM - LoginPage - INFO: Element found with locator: user_password and  locatorType: id
+06/20/2018 08:14:13 PM - LoginPage - INFO: Sent data on element with locator: user_password locatorType: id
+06/20/2018 08:14:13 PM - LoginPage - INFO: Element found with locator: commit and  locatorType: name
+06/20/2018 08:14:20 PM - LoginPage - INFO: Clicked on element with locator: commit locatorType: name
+06/20/2018 08:14:20 PM - Status - INFO: ### VERIFICATION SUCCESSFUL :: + Title is incorrect
+06/20/2018 08:14:23 PM - LoginPage - INFO: Element found with locator: //input[@id='search-courses'] and  locatorType: xpath
+06/20/2018 08:14:23 PM - LoginPage - INFO: Element Found by locator://input[@id='search-courses'] and locatorType:xpath
+06/20/2018 08:14:23 PM - Status - INFO: ### VERIFICATION SUCCESSFUL :: + Login was not successful
+06/20/2018 08:14:23 PM - Status - INFO: test_ValidLogin### Test Successful
+06/20/2018 08:14:23 PM - LoginPage - INFO: Element found with locator: /html//div[@id='navbar']//ul[@class='nav navbar-nav navbar-right']/li[@class='dropdown']/a and  locatorType: xpath
+06/20/2018 08:14:23 PM - LoginPage - INFO: Clicked on element with locator: /html//div[@id='navbar']//ul[@class='nav navbar-nav navbar-right']/li[@class='dropdown']/a locatorType: xpath
+06/20/2018 08:14:25 PM - LoginPage - INFO: Element found with locator: [href='\/sign_out'] and  locatorType: css
+06/20/2018 08:14:28 PM - LoginPage - INFO: Clicked on element with locator: [href='\/sign_out'] locatorType: css
+06/20/2018 08:14:28 PM - LoginPage - INFO: Element found with locator: .btn-primary.text-center and  locatorType: css
+06/20/2018 08:14:28 PM - LoginPage - INFO: Element Found by locator:.btn-primary.text-center and locatorType:css
+06/20/2018 08:14:28 PM - Status - INFO: ### VERIFICATION SUCCESSFUL :: + Logout was not successful
+06/20/2018 08:14:28 PM - Status - INFO: test_validLogout### Test Successful
+06/20/2018 08:19:59 PM - LoginPage - INFO: Element found with locator: Login and  locatorType: link
+06/20/2018 08:20:06 PM - LoginPage - INFO: Clicked on element with locator: Login locatorType: link
+06/20/2018 08:20:06 PM - LoginPage - INFO: Element found with locator: user_email and  locatorType: id
+06/20/2018 08:20:06 PM - LoginPage - INFO: Sent data on element with locator: user_email locatorType: id
+06/20/2018 08:20:06 PM - LoginPage - INFO: Element found with locator: user_password and  locatorType: id
+06/20/2018 08:20:06 PM - LoginPage - INFO: Sent data on element with locator: user_password locatorType: id
+06/20/2018 08:20:06 PM - LoginPage - INFO: Element found with locator: commit and  locatorType: name
+06/20/2018 08:20:08 PM - LoginPage - INFO: Clicked on element with locator: commit locatorType: name
+06/20/2018 08:20:08 PM - LoginPage - INFO: Element found with locator: .alert-danger and  locatorType: css
+06/20/2018 08:20:08 PM - LoginPage - INFO: Element Found by locator:.alert-danger and locatorType:css
+06/20/2018 08:20:08 PM - Status - INFO: ### VERIFICATION SUCCESSFUL :: + Login was successful
+06/20/2018 08:20:08 PM - Status - INFO: test_invalidLogin### Test Successful
+06/20/2018 08:20:08 PM - LoginPage - INFO: Element found with locator: Login and  locatorType: link
+06/20/2018 08:20:10 PM - LoginPage - INFO: Clicked on element with locator: Login locatorType: link
+06/20/2018 08:20:10 PM - LoginPage - INFO: Element found with locator: user_email and  locatorType: id
+06/20/2018 08:20:10 PM - LoginPage - INFO: Sent data on element with locator: user_email locatorType: id
+06/20/2018 08:20:10 PM - LoginPage - INFO: Element found with locator: user_password and  locatorType: id
+06/20/2018 08:20:10 PM - LoginPage - INFO: Sent data on element with locator: user_password locatorType: id
+06/20/2018 08:20:10 PM - LoginPage - INFO: Element found with locator: commit and  locatorType: name
+06/20/2018 08:20:15 PM - LoginPage - INFO: Clicked on element with locator: commit locatorType: name
+06/20/2018 08:20:15 PM - Status - INFO: ### VERIFICATION SUCCESSFUL :: + Title is incorrect
+06/20/2018 08:20:18 PM - LoginPage - INFO: Element found with locator: //input[@id='search-courses'] and  locatorType: xpath
+06/20/2018 08:20:18 PM - LoginPage - INFO: Element Found by locator://input[@id='search-courses'] and locatorType:xpath
+06/20/2018 08:20:18 PM - Status - INFO: ### VERIFICATION SUCCESSFUL :: + Login was not successful
+06/20/2018 08:20:18 PM - Status - INFO: test_ValidLogin### Test Successful
+06/20/2018 08:20:18 PM - LoginPage - INFO: Element found with locator: /html//div[@id='navbar']//ul[@class='nav navbar-nav navbar-right']/li[@class='dropdown']/a and  locatorType: xpath
+06/20/2018 08:20:18 PM - LoginPage - INFO: Clicked on element with locator: /html//div[@id='navbar']//ul[@class='nav navbar-nav navbar-right']/li[@class='dropdown']/a locatorType: xpath
+06/20/2018 08:20:20 PM - LoginPage - INFO: Element found with locator: [href='\/sign_out'] and  locatorType: css
+06/20/2018 08:20:23 PM - LoginPage - INFO: Clicked on element with locator: [href='\/sign_out'] locatorType: css
+06/20/2018 08:20:23 PM - LoginPage - INFO: Element found with locator: .btn-primary.text-center and  locatorType: css
+06/20/2018 08:20:23 PM - LoginPage - INFO: Element Found by locator:.btn-primary.text-center and locatorType:css
+06/20/2018 08:20:23 PM - Status - INFO: ### VERIFICATION SUCCESSFUL :: + Logout was not successful
+06/20/2018 08:20:23 PM - Status - INFO: test_validLogout### Test Successful
