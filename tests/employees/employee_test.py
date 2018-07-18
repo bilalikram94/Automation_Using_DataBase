@@ -13,11 +13,15 @@ class TestEmployees(unittest.TestCase):
         self.emp = Employees(self.driver)
 
     @pytest.mark.run(order=1)
-    def test_Employees(self):
-        self.emp.EmployeesSmoke()
+    @data(*getCVSData("/home/bilalikram/PycharmProjects/Automation_Using_Database/employeeSmoke.csv"))
+    @unpack
+    def test_Employees(self, emp, pageheader, emp1, newemp, emp2, searchbar):
+        self.emp.EmployeesSmoke(emp, pageheader, emp1, newemp, emp2, searchbar)
 
     @pytest.mark.run(order=2)
-    @data(*getCVSData("/home/bilalikram/PycharmProjects/Automation_Framework/employeepagetext.csv"))
+    @data(*getCVSData("/home/bilalikram/PycharmProjects/Automation_Using_Database/employeepagetext.csv"))
     @unpack
-    def test_TextEmployee(self, newemployeetext, nametext, designation, department, location, status):
-        self.emp.verifyTextEmployee(newemployeetext, nametext, designation, department, location, status)
+    def test_TextEmployee(self, emp, newemp, emp1, name, emp2, designation, emp3, department, emp4, location, emp5,
+                          status):
+        self.emp.TextEmployee(emp, newemp, emp1, name, emp2, designation, emp3, department, emp4, location, emp5,
+                              status)

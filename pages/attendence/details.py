@@ -267,9 +267,9 @@ class Details(BasePage):
         result = self.util.verifyTextContains(actualText, expectedText)
         return result
 
-
-
-    def DetailsVerifyText(self, detail, day, detail1, date, detail2, timein, detail3, timeout, detail4, timespent, detail5, breaktime, detail6, worktime, detail7, absentees, detail8, detailC, detail9, logs, detail10, addnew, detail11, export):
+    def DetailsVerifyText(self, detail, day, detail1, date, detail2, timein, detail3, timeout, detail4, timespent,
+                          detail5, breaktime, detail6, worktime, detail7, absentees, detail8, detailC, detail9, logs,
+                          detail10, addnew, detail11, export):
         self.nav.Details()
         result = self.verifyTextDay(detail, day)
         self.stat.mark(result, "Verify Text Day ")
