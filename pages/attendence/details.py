@@ -7,24 +7,6 @@ class Details(BasePage):
     log = cl.customLogger(logging.DEBUG)
     locator = None
     locatorType = None
-    # Locators
-    _side_menu = "//ul[@id='cd-primary-nav']/li[1]"  # By Xpath
-    _attendence = "Attendance"  # By Link
-    _logs = "Logs"  # By Link
-    _details = "Detail"  # By Link
-    _absentees = "Absentees"  # By Link
-    _more_options = "[data-toggle='collapse']"  # By CSS
-    _search_bar = "#basic_search [type]"  # By CSS
-    _add_new = ".btn-blue.btn-action"  # By CSS
-    _export = "[name='export']"  # By CSS
-    _table = "tbody tr:nth-of-type(1) .text-left"  # By CSS
-    _day = "thead tr .text-center:nth-of-type(1)"  # By CSS
-    _date = "thead tr .text-center:nth-of-type(2)"  # By CSS
-    _time_in = "thead tr .text-center:nth-of-type(3)"  # By CSS
-    _time_out = "thead tr .text-center:nth-of-type(4)"  # By CSS
-    _time_spent = "thead tr .text-center:nth-of-type(5)"  # By CSS
-    _break_time = "thead tr .text-center:nth-of-type(6)"  # By CSS
-    _work_time = "thead tr .text-center:nth-of-type(7)"  # By CSS
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -58,7 +40,7 @@ class Details(BasePage):
             self.locatorType = db[1]
         except:
             self.log.error("Something went wrong")
-        result = self.isElementPresent(self._search_bar, locatorType='css')
+        result = self.isElementPresent(self.locator, self.locatorType)
         return result
 
     def verifyMoreOptions(self, detail3, moreoptions):
@@ -129,40 +111,187 @@ class Details(BasePage):
         result6 = self.verifyTable(detail7, table1)
         self.stat.markFinal("Test_Details Smoke", result6, "Verify Table")
 
-    def DetailsVerifyText(self, _text_day, _text_date, _text_time_in, _text_time_out, _text_time_spent, _text_break_time, _text_work_time, _text_absentees, _text_details, _text_logs, _text_add_new, _text_export):
-        text = self.getText(self._day, locatorType='css')
-        result = self.util.verifyTextContains(_text_day, text)
+    def verifyTextDay(self, detail, day):
+        db = self.dbGetElement(detail, day)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(detail, day)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
+        return result
+
+    def verifyTextDate(self, detail1, date):
+        db = self.dbGetElement(detail1, date)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(detail1, date)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
+        return result
+
+    def verifyTextTimeIn(self, detail2, timein):
+        db = self.dbGetElement(detail2, timein)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(detail2, timein)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
+        return result
+
+    def verifyTextTimeOut(self, detail3, timeout):
+        db = self.dbGetElement(detail3, timeout)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(detail3, timeout)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
+        return result
+
+    def verifyTimeSpent(self, detail4, timespent):
+        db = self.dbGetElement(detail4, timespent)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(detail4, timespent)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
+        return result
+
+    def verifyTextBreakTime(self, detail5, breaktime):
+        db = self.dbGetElement(detail5, breaktime)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(detail5, breaktime)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
+        return result
+
+    def verifyTextWorktime(self, detail6, worktime):
+        db = self.dbGetElement(detail6, worktime)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(detail6, worktime)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
+        return result
+
+    def verifyTextAbsentees(self, detail7, absentees):
+        db = self.dbGetElement(detail7, absentees)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(detail7, absentees)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
+        return result
+
+    def verifyTextDetail(self, detail8, detailC):
+        db = self.dbGetElement(detail8, detailC)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(detail8, detailC)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
+        return result
+
+    def verifyTextLogs(self, detail9, logs):
+        db = self.dbGetElement(detail9, logs)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(detail9, logs)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
+        return result
+
+    def verifyTextAddNew(self, detail10, addnew):
+        db = self.dbGetElement(detail10, addnew)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(detail10, addnew)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
+        return result
+
+    def verifyTextExport(self, detail11, export):
+        db = self.dbGetElement(detail11, export)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(detail11, export)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
+        return result
+
+
+
+    def DetailsVerifyText(self, detail, day, detail1, date, detail2, timein, detail3, timeout, detail4, timespent, detail5, breaktime, detail6, worktime, detail7, absentees, detail8, detailC, detail9, logs, detail10, addnew, detail11, export):
+        self.nav.Details()
+        result = self.verifyTextDay(detail, day)
         self.stat.mark(result, "Verify Text Day ")
-        text1 = self.getText(self._date, locatorType='css')
-        result1 = self.util.verifyTextContains(_text_date, text1)
+        result1 = self.verifyTextDate(detail1, date)
         self.stat.mark(result1, "Verify Text Date")
-        text2 = self.getText(self._time_in, locatorType='css')
-        result2 = self.util.verifyTextContains(_text_time_in, text2)
+        result2 = self.verifyTextTimeIn(detail2, timein)
         self.stat.mark(result2, "Verify Text Time In")
-        text3 = self.getText(self._time_out, locatorType='css')
-        result3 = self.util.verifyTextContains(_text_time_out, text3)
+        result3 = self.verifyTextTimeOut(detail3, timeout)
         self.stat.mark(result3, "Verify Text Time Out")
-        text4 = self.getText(self._time_spent, locatorType='css')
-        result4 = self.util.verifyTextContains(_text_time_spent, text4)
-        self.stat.mark(result4, "Verify Text Time Spent")
-        text5 = self.getText(self._break_time, locatorType='css')
-        result5 = self.util.verifyTextContains(_text_break_time, text5)
+        result4 = self.verifyTimeSpent(detail4, timespent)
+        self.stat.mark(result4, "Veirfy Text Time Spent")
+        result5 = self.verifyTextBreakTime(detail5, breaktime)
         self.stat.mark(result5, "Verify Text Break Time")
-        text6 = self.getText(self._work_time, locatorType='css')
-        result6 = self.util.verifyTextContains(_text_work_time, text6)
+        result6 = self.verifyTextWorktime(detail6, worktime)
         self.stat.mark(result6, "Verify Text Work Time")
-        text7 = self.getText(self._absentees, locatorType='link')
-        result7 = self.util.verifyTextContains(_text_absentees, text7)
+        result7 = self.verifyTextAbsentees(detail7, absentees)
         self.stat.mark(result7, "Verify Text Absentees")
-        text8 = self.getText(self._details, locatorType='link')
-        result8 = self.util.verifyTextContains(_text_details, text8)
-        self.stat.mark(result8, "Verify Text Details")
-        text9 = self.getText(self._logs, locatorType='link')
-        result9 = self.util.verifyTextContains(_text_logs, text9)
+        result8 = self.verifyTextDetail(detail8, detailC)
+        self.stat.mark(result8, "Verify Text Detail")
+        result9 = self.verifyTextLogs(detail9, logs)
         self.stat.mark(result9, "Verify Text Logs")
-        text10 = self.getText(self._add_new, locatorType='css')
-        result10 = self.util.verifyTextContains(_text_add_new, text10)
-        self.stat.mark(result10, "verify Text Add New")
-        text11 = self.getText(self._export, locatorType='css')
-        result11 = self.util.verifyTextContains(_text_export, text11)
-        self.stat.mark(result11, "Verify Text Export")
+        result10 = self.verifyTextAddNew(detail10, addnew)
+        self.stat.mark(result10, "Verify Text Add New")
+        result11 = self.verifyTextExport(detail11, export)
+        self.stat.markFinal("Test_Text_Detail", result11, "Verify Text Export")
