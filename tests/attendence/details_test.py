@@ -14,11 +14,14 @@ class TestDetails(unittest.TestCase):
         self.dt = Details(self.driver)
 
     @pytest.mark.run(order=1)
-    def test_Details(self):
-        self.dt.DetailsSmoke()
-
-    @pytest.mark.run(order=2)
-    @data(*getCVSData("/home/bilalikram/PycharmProjects/Automation_Framework/detailsText.csv"))
+    @data(*getCVSData("/home/bilalikram/PycharmProjects/Automation_Using_Database/detailSmoke.csv"))
     @unpack
-    def test_DetailsText(self, _text_day, _text_date, _text_time_in, _text_time_out, _text_time_spent, _text_break_time, _text_work_time, _text_absentees, _text_details, _text_logs, _text_add_new, _text_export):
-        self.dt.DetailsVerifyText(_text_day, _text_date, _text_time_in, _text_time_out, _text_time_spent, _text_break_time, _text_work_time, _text_absentees, _text_details, _text_logs, _text_add_new, _text_export)
+    def test_Details(self, detail, logs, detail1, absentees, detail2, searchbar, detail3, moreoptions, detail4, export, detail5, addnew, detail6, table, detail7, table1):
+        self.dt.DetailsSmoke(detail, logs, detail1, absentees, detail2, searchbar, detail3, moreoptions, detail4, export, detail5, addnew, detail6, table, detail7, table1)
+
+    # @pytest.mark.run(order=2)
+    # @data(*getCVSData("/home/bilalikram/PycharmProjects/Automation_Framework/detailsText.csv"))
+    # @unpack
+    # def test_DetailsText(self, _text_day, _text_date, _text_time_in, _text_time_out, _text_time_spent, _text_break_time, _text_work_time, _text_absentees, _text_details, _text_logs, _text_add_new, _text_export):
+    #     self.dt.DetailsVerifyText(_text_day, _text_date, _text_time_in, _text_time_out, _text_time_spent, _text_break_time, _text_work_time, _text_absentees, _text_details, _text_logs, _text_add_new, _text_export)
+    #

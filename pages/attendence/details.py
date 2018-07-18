@@ -5,6 +5,8 @@ import logging
 
 class Details(BasePage):
     log = cl.customLogger(logging.DEBUG)
+    locator = None
+    locatorType = None
     # Locators
     _side_menu = "//ul[@id='cd-primary-nav']/li[1]"  # By Xpath
     _attendence = "Attendance"  # By Link
@@ -28,49 +30,103 @@ class Details(BasePage):
         super().__init__(driver)
         self.driver = driver
 
-    def verifyLogs(self):
-        result = self.isElementPresent(self._logs, locatorType='link')
+    def verifyLogs(self, detail, logs):
+        db = self.dbGetElement(detail, logs)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+        result = self.isElementPresent(self.locator, self.locatorType)
         return result
 
-    def verifyAbsentees(self):
-        result = self.isElementPresent(self._absentees, locatorType='link')
+    def verifyAbsentees(self, detail1, absentees):
+        db = self.dbGetElement(detail1, absentees)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+
+        result = self.isElementPresent(self.locator, self.locatorType)
         return result
 
-    def verifySearchBar(self):
+    def verifySearchBar(self, detail2, searchbar):
+        db = self.dbGetElement(detail2, searchbar)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
         result = self.isElementPresent(self._search_bar, locatorType='css')
         return result
 
-    def verifyMoreOptions(self):
-        result = self.isElementPresent(self._more_options, locatorType='css')
+    def verifyMoreOptions(self, detail3, moreoptions):
+        db = self.dbGetElement(detail3, moreoptions)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+        result = self.isElementPresent(self.locator, self.locatorType)
         return result
 
-    def verifyAddNew(self):
-        result = self.isElementPresent(self._add_new, locatorType='css')
+    def verifyAddNew(self, detail4, addnew):
+        db = self.dbGetElement(detail4, addnew)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+
+        result = self.isElementPresent(self.locator, self.locatorType)
         return result
 
-    def verifyExport(self):
-        result = self.isElementPresent(self._export, locatorType='css')
+    def verifyExport(self, detail5, export):
+        db = self.dbGetElement(detail5, export)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+        result = self.isElementPresent(self.locator, self.locatorType)
         return result
 
-    def verifyTable(self):
-        result = self.isElementPresent(self._table, locatorType='css')
+    def waitForTable(self, detail6, table,):
+        db = self.dbGetElement(detail6, table)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+        self.waitForElement(self.locator, self.locatorType)
+
+    def verifyTable(self, detail7, table1):
+        db = self.dbGetElement(detail7, table1)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("Something went wrong")
+        result = self.isElementPresent(self.locator, self.locatorType)
         return result
 
-    def DetailsSmoke(self):
+    def DetailsSmoke(self, detail, logs, detail1, absentees, detail2, searchbar, detail3, moreoptions, detail4, export, detail5, addnew, detail6, table, detail7, table1):
         self.nav.Details()
-        result = self.verifyLogs()
+        result = self.verifyLogs(detail, logs)
         self.stat.mark(result, "Verify Details")
-        result1 = self.verifyAbsentees()
+        result1 = self.verifyAbsentees(detail1, absentees)
         self.stat.mark(result1, "Verify Absentees")
-        result2 = self.verifySearchBar()
+        result2 = self.verifySearchBar(detail2, searchbar)
         self.stat.mark(result2, "Verify Search Bar")
-        result3 = self.verifyMoreOptions()
+        result3 = self.verifyMoreOptions(detail3, moreoptions)
         self.stat.mark(result3, "Verify More Options")
-        result4 = self.verifyExport()
+        result4 = self.verifyExport(detail4, export)
         self.stat.mark(result4, "Verify Export")
-        result5 = self.verifyAddNew()
+        result5 = self.verifyAddNew(detail5, addnew)
         self.stat.mark(result5, "Verify Add New")
-        result6 = self.verifyTable()
+        self.waitForTable(detail6, table)
+        result6 = self.verifyTable(detail7, table1)
         self.stat.markFinal("Test_Details Smoke", result6, "Verify Table")
 
     def DetailsVerifyText(self, _text_day, _text_date, _text_time_in, _text_time_out, _text_time_spent, _text_break_time, _text_work_time, _text_absentees, _text_details, _text_logs, _text_add_new, _text_export):
