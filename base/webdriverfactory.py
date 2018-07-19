@@ -13,9 +13,11 @@ Is called in conftest file instead of Selenium Webdriver
 
 
 from selenium import webdriver
+import pymysql.cursors
 
 
 class WebDriverFactory:
+
 
     def __init__(self, browser):
         self.browser = browser
@@ -39,8 +41,9 @@ class WebDriverFactory:
         :return:
             'WebDriver Instance'
         """
-
-        baseURL = "http://sandbox2.cubix.co/staging/portal/dashboard"
+        db = self.getURL("hrms")
+        url = db[0]
+        baseURL = url
         if self.browser == "iexplorer":
 
             # Set IE Driver
@@ -64,3 +67,29 @@ class WebDriverFactory:
 
         driver.get(baseURL)
         return driver
+
+    @staticmethod
+    def getURL(name):
+        connection = pymysql.connect(host='localhost',
+                                     user='bilal',
+                                     password='Bilal@123',
+                                     db='testing',
+                                     charset='utf8mb4',
+                                     cursorclass=pymysql.cursors.DictCursor)
+
+        try:
+            sql = "SELECT URL FROM Base WHERE Name = '" + name + "'"
+
+            with connection.cursor() as cursor:
+                # Read a single record
+                cursor.execute(sql)
+                result = cursor.fetchall()
+
+
+            new_row = []
+            for record in result:
+                new_row.append(record['URL'])
+            print("database testing = ", new_row)
+            return new_row
+        except:
+            print("Something went Wrong")

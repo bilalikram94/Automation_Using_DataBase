@@ -1,8 +1,6 @@
 import pytest
 from base.webdriverfactory import WebDriverFactory
 from pages.home.login_page import LoginPage
-from ddt import ddt, data, unpack
-from utilities.read_data import getCVSData
 
 email = None
 password = None

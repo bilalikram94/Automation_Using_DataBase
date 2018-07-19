@@ -113,3 +113,29 @@ class BasePage(SeleniumDriver):
 
         finally:
             connection.close()
+
+    def getURL1(self, name=""):
+        # Connect to the database
+        connection = pymysql.connect(host='localhost',
+                                     user='bilal',
+                                     password='Bilal@123',
+                                     db='testing',
+                                     charset='utf8mb4',
+                                     cursorclass=pymysql.cursors.DictCursor)
+        self.log.info("Connection Established with DB")
+        try:
+            sql = "SELECT URL FROM 'Base' WHERE Name = '" + name + "'"
+
+            with connection.cursor() as cursor:
+                # Read a single record
+                cursor.execute(sql)
+                result = cursor.fetchall()
+                self.log.info("Query Successfully Ran")
+
+            new_row = []
+            for record in result:
+                new_row.append(record['Name'])
+                self.log.info("Data Retrieved with Name: " + name)
+            return new_row
+        except:
+            self.log.error("Can't run Query")
