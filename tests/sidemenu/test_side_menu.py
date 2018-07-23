@@ -18,11 +18,15 @@ class TestSideMenu(unittest.TestCase):
         self.sm = SideMenu(self.driver)
 
     @pytest.mark.run(order=1)
-    def test_SideMenu(self):
-        self.sm.SideMenuSmoke()
+    @data(*getCVSData("/home/bilalikram/PycharmProjects/Automation_Using_Database/sideMenuSmoke.csv"))
+    @unpack
+    def test_SideMenu(self, side, sidemenu, side1, attendance, side2, emp, side3, support, side4, train, side5,
+                      timeoff):
+        self.sm.SideMenuSmoke(side, sidemenu, side1, attendance, side2, emp, side3, support, side4, train, side5,
+                              timeoff)
 
     @pytest.mark.run(order=2)
-    @data(*getCVSData("/home/bilalikram/PycharmProjects/Automation_Framework/sidemenuText.csv"))
+    @data(*getCVSData("/home/bilalikram/PycharmProjects/Automation_Using_Database/sidemenuText.csv"))
     @unpack
-    def test_SideMenu1(self, _text_attendance, _text_employee, _text_support_ticket, _text_training, _text_time_off):
-        self.sm.SideMenuText(_text_attendance, _text_employee, _text_support_ticket, _text_training, _text_time_off)
+    def test_Side(self, side, attendance, side1, emp, side2, support, side3, train, side4, timeoff):
+        self.sm.SideMenuText(side, attendance, side1, emp, side2, support, side3, train, side4, timeoff)
