@@ -151,7 +151,6 @@ class SideMenu(BasePage):
         return result
 
     def SideMenuText(self,  side, attendance, side1, emp, side2, support, side3, train, side4, timeoff):
-
         result = self.verifyTextAttendance(side, attendance)
         self.stat.mark(result, "Verify Text Attendence")
         result1 = self.verifyTextEmployees(side1, emp)

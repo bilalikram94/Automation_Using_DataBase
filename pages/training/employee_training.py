@@ -5,6 +5,9 @@ import logging
 
 class Training(BasePage):
     log = cl.customLogger(logging.DEBUG)
+    locator = None
+    locatorType = None
+
     # Locators
     _title = "Advanced HRMS - Staging"
     _search_bar = "//div[@id='basic_search']/input[@type='text']"  # By Xpath
@@ -25,102 +28,211 @@ class Training(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
-    def verifySearchbar(self):
-        result = self.isElementPresent(self._search_bar, locatorType='xpath')
+    def verifySearchbar(self, train, search):
+        db = self.dbGetElement(train, search)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or Column name incorrect !!!")
+        result = self.isElementPresent(self.locator, self.locatorType)
         return result
 
-    def verifyTextTitlePage(self, page_title):
-        text = self.getText(self._page_title, locatorType='css')
-        result = self.util.verifyTextContains(page_title, text)
+    def verifyTextTitlePage(self, train1, page):
+        db = self.dbGetElement(train1, page)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or Column Name Incorrect !!!")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(train1, page)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
         return result
 
-    def verifyTextEmployeeTraining(self, emp_train):
-        text = self.getText(self._employee_training, locatorType='link')
-        result = self.util.verifyTextContains(emp_train, text)
+    def verifyTextEmployeeTraining(self, train2, emptrain):
+        db = self.dbGetElement(train2, emptrain)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or Column Name Incorrect !!!")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(train2, emptrain)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
         return result
 
-    def verifyTextTrainingEvaluation(self, train_eval):
-        text = self.getText(self._training_evaluation, locatorType='link')
-        result = self.util.verifyTextContains(train_eval, text)
+    def verifyTextTrainingEvaluation(self, train3, evaluation):
+        db = self.dbGetElement(train3, evaluation)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or Column Name Incorrect !!!")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(train3, evaluation)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
         return result
 
-    def verifyTextTrainers(self, trainers):
-        text = self.getText(self._trainers, locatorType='link')
-        result = self.util.verifyTextContains(trainers, text)
+    def verifyTextTrainers(self, train4, trainers):
+        db = self.dbGetElement(train4, trainers)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or Column Name Incorrect !!!")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(train4, trainers)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
         return result
 
-    def verifyTextTrainingEvents(self, train_events):
-        text = self.getText(self._training_events, locatorType='link')
-        result = self.util.verifyTextContains(train_events, text)
+    def verifyTextTrainingEvents(self, train5, events):
+        db = self.dbGetElement(train5, events)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or Column Name Incorrect !!!")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(train5, events)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
         return result
 
-    def verifyTextTrainingNeedsAssessment(self, train_assess):
-        text = self.getText(self._training_needs_assessment, locatorType='link')
-        result = self.util.verifyTextContains(train_assess, text)
+    def verifyTextTrainingNeedsAssessment(self, train6, assess):
+        db = self.dbGetElement(train6, assess)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or Column Name Incorrect !!!")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(train6, assess)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
         return result
 
-    def verifyTextAddNewTraining(self, add_train):
-        text = self.getText(self._add_new_training, locatorType='css')
-        result = self.util.verifyTextContains(add_train, text)
+    def verifyTextAddNewTraining(self, train7, training):
+        db = self.dbGetElement(train7, training)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or Column Name Incorrect !!!")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(train7, training)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
         return result
 
-    def verifyTextTrainingType(self, train_type):
-        text = self.getText(self._training_type, locatorType='css')
-        result = self.util.verifyTextContains(train_type, text)
+    def verifyTextTrainingType(self, train8, traintype):
+        db = self.dbGetElement(train8, traintype)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or Column Name Incorrect !!!")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(train8, traintype)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
         return result
 
-    def verifyTextTableTitle(self, table_title):
-        text = self.getText(self._table_title, locatorType='css')
-        result = self.util.verifyTextContains(table_title, text)
+    def verifyTextTableTitle(self, train9, table):
+        db = self.dbGetElement(train9, table)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or Column Name Incorrect !!!")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(train9, table)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
         return result
 
-    def verifyTextTrainingFrom(self, train_frm):
-        text = self.getText(self._training_from, locatorType='css')
-        result = self.util.verifyTextContains(train_frm, text)
+    def verifyTextTrainingFrom(self, train10, train_frm):
+        db = self.dbGetElement(train10, train_frm)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or Column Name Incorrect !!!")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(train10, train_frm)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
         return result
 
-    def verifyTextTrainingTo(self, train_to):
-        text = self.getText(self._training_to, locatorType='css')
-        result = self.util.verifyTextContains(train_to, text)
+    def verifyTextTrainingTo(self, train11, train_to):
+        db = self.dbGetElement(train11, train_to)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or Column Name Incorrect !!!")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(train11, train_to)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
         return result
 
-    def verifyTextActions(self, actions):
-        text = self.getText(self._actions, locatorType='css')
-        result = self.util.verifyTextContains(actions, text)
+    def verifyTextActions(self, train12, actions):
+        db = self.dbGetElement(train12, actions)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or Column Name Incorrect !!!")
+        expectedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(train12, actions)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, expectedText)
         return result
 
-    def verifyMoreOptions(self):
+    def verifyMoreOptions(self, train13, more_options):
+        db = self.dbGetElement(train13, more_options)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or Column name Incorrect !!!")
         result = self.isElementPresent(self._more_options, locatorType='css')
         return result
 
-    def EmployeeTrainingSmoke(self,page_title,emp_train,train_eval,trainers,train_events,train_assess,add_train,train_type,table_title,train_frm,train_to,actions):
+    def EmployeeTrainingSmoke(self, train, search, train1, page, train2, emptrain, train3, evaluation, train4, trainers,
+                              train5, events, train6, assess, train7, training, train8, traintype, train9, table,
+                              train10, train_frm, train11, train_to, train12, actions, train13, more_options):
         self.nav.Training()
-        self.verifyPageTitle(self._title)
-        result = self.verifySearchbar()
+        result = self.verifySearchbar(train, search)
         self.stat.mark(result, "Verify Search Bar")
-        result1 = self.verifyTextTitlePage(page_title)
+        result1 = self.verifyTextTitlePage(train1, page)
         self.stat.mark(result1, "Verify Text Title Page")
-        result2 = self.verifyTextEmployeeTraining(emp_train)
+        result2 = self.verifyTextEmployeeTraining(train2, emptrain)
         self.stat.mark(result2, "Verify Text Employee Training")
-        result3 = self.verifyTextTrainingEvaluation(train_eval)
+        result3 = self.verifyTextTrainingEvaluation(train3, evaluation)
         self.stat.mark(result3, "Verify Text Training Evaluation")
-        result4 = self.verifyTextTrainers(trainers)
+        result4 = self.verifyTextTrainers(train4, trainers)
         self.stat.mark(result4, "Verify Text Trainers")
-        result5 = self.verifyTextTrainingEvents(train_events)
+        result5 = self.verifyTextTrainingEvents(train5, events)
         self.stat.mark(result5, "Verify Text Training Events")
-        result6 = self.verifyTextTrainingNeedsAssessment(train_assess)
+        result6 = self.verifyTextTrainingNeedsAssessment(train6, assess)
         self.stat.mark(result6, "Verify Text Training Needs Assessment")
-        result7 = self.verifyTextAddNewTraining(add_train)
+        result7 = self.verifyTextAddNewTraining(train7, training)
         self.stat.mark(result7, "Verify Text Add New Training")
-        result8 = self.verifyTextTrainingType(train_type)
+        result8 = self.verifyTextTrainingType(train8, traintype)
         self.stat.mark(result8, "Verify Text Training Type")
-        result9 = self.verifyTextTableTitle(table_title)
+        result9 = self.verifyTextTableTitle(train9, table)
         self.stat.mark(result9, "Verify Table Title")
-        result10 = self.verifyTextTrainingFrom(train_frm)
+        result10 = self.verifyTextTrainingFrom(train10, train_frm)
         self.stat.mark(result10, "Verify Text Training From")
-        result11 = self.verifyTextTrainingTo(train_to)
+        result11 = self.verifyTextTrainingTo(train11, train_to)
         self.stat.mark(result11, "Verify Text Training To")
-        result12 = self.verifyTextActions(actions)
+        result12 = self.verifyTextActions(train12, actions)
         self.stat.mark(result12, "Verify Text Actions")
-        result13 = self.verifyMoreOptions()
+        result13 = self.verifyMoreOptions(train13, more_options)
         self.stat.markFinal("Test Employee Training", result13, "Verify More Options")
