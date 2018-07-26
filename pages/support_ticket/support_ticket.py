@@ -1,7 +1,5 @@
 from base.basepage import BasePage
 import utilities.custom_logger as cl
-from utilities.teststatus import Status
-from pages.home.navigation import Navigation
 import logging
 import time
 
@@ -13,7 +11,6 @@ class SupportTicket(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
-        self.nav = Navigation(driver)
 
     def verifyMyTickets(self, support, tickets):
         db = self.DBGetElement(support, tickets)
