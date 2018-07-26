@@ -30,7 +30,7 @@ class Employees(BasePage):
         super().__init__(driver)
 
     def verifyPageheader(self, emp, employees):
-        db = self.dbGetElement(emp, employees)
+        db = self.DBGetElement(emp, employees)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -43,7 +43,7 @@ class Employees(BasePage):
         return result
 
     def verifyNewEmployee(self, emp1, newemp):
-        db = self.dbGetElement(emp1, newemp)
+        db = self.DBGetElement(emp1, newemp)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -53,7 +53,7 @@ class Employees(BasePage):
         return result
 
     def verifySearchBar(self, emp2, searchbar):
-        db = self.dbGetElement(emp2, searchbar)
+        db = self.DBGetElement(emp2, searchbar)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -74,7 +74,7 @@ class Employees(BasePage):
         self.stat.markFinal("Test_Employees Smoke", result2, "Verify Search Bar")
 
     def verifyTextEmployee(self, emp, newemp):
-        db = self.dbGetElement(emp, newemp)
+        db = self.DBGetElement(emp, newemp)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -87,7 +87,7 @@ class Employees(BasePage):
         return result
 
     def verifyTextName(self, emp1, name):
-        db = self.dbGetElement(emp1, name)
+        db = self.DBGetElement(emp1, name)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -100,7 +100,7 @@ class Employees(BasePage):
         return result
 
     def verifyTextDesignation(self, emp2, designation):
-        db = self.dbGetElement(emp2, designation)
+        db = self.DBGetElement(emp2, designation)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -113,7 +113,7 @@ class Employees(BasePage):
         return result
 
     def verifyTextDepartment(self, emp3, depart):
-        db = self.dbGetElement(emp3, depart)
+        db = self.DBGetElement(emp3, depart)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -126,7 +126,7 @@ class Employees(BasePage):
         return result
 
     def verifyTextLocation(self, emp4, location):
-        db = self.dbGetElement(emp4, location)
+        db = self.DBGetElement(emp4, location)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -139,7 +139,7 @@ class Employees(BasePage):
         return result
 
     def verifyTextStatus(self, emp5, status):
-        db = self.dbGetElement(emp5, status)
+        db = self.DBGetElement(emp5, status)
         try:
             self.locator = db[0]
             self.locatorType = db[1]

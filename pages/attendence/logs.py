@@ -17,7 +17,7 @@ class Logs(BasePage):
         self.driver = driver
 
     def verifyLogs(self, tablename, name):
-        db = self.dbGetElement(tablename, name)
+        db = self.DBGetElement(tablename, name)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -27,7 +27,7 @@ class Logs(BasePage):
         return result
 
     def verifyDetails(self, tablename1, name1):
-        db = self.dbGetElement(tablename1, name1)
+        db = self.DBGetElement(tablename1, name1)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -37,7 +37,7 @@ class Logs(BasePage):
         return result
 
     def verifyAbsentees(self, tablename2, name2):
-        db = self.dbGetElement(tablename2, name2)
+        db = self.DBGetElement(tablename2, name2)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -47,7 +47,7 @@ class Logs(BasePage):
         return result
 
     def verifyMoreOptions(self, tablename3, name3):
-        db = self.dbGetElement(tablename3, name3)
+        db = self.DBGetElement(tablename3, name3)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -57,7 +57,7 @@ class Logs(BasePage):
         return result
 
     def verifyAddBtn(self, tablename4, name4):
-        db = self.dbGetElement(tablename4, name4)
+        db = self.DBGetElement(tablename4, name4)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -67,7 +67,7 @@ class Logs(BasePage):
         return result
 
     def verifySearchBar(self, tablename5, name5):
-        db = self.dbGetElement(tablename5, name5)
+        db = self.DBGetElement(tablename5, name5)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -78,7 +78,7 @@ class Logs(BasePage):
 
     def verifyTable(self, tablename6, name6):
         time.sleep(3)
-        db = self.dbGetElement(tablename6, name6)
+        db = self.DBGetElement(tablename6, name6)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -88,14 +88,14 @@ class Logs(BasePage):
         return result
 
     def verifyDropDown(self, tablename7, name7, tablename8, name8):
-        db = self.dbGetElement(tablename7, name7)
+        db = self.DBGetElement(tablename7, name7)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
         except:
             self.log.error("Something went wrong")
         self.elementClick(self.locator, self.locatorType)
-        db1 = self.dbGetElement(tablename8, name8)
+        db1 = self.DBGetElement(tablename8, name8)
         try:
             self.locator = db1[0]
             self.locatorType = db1[1]
@@ -125,7 +125,7 @@ class Logs(BasePage):
         self.stat.markFinal("Test_Logs", result7, "Verify Drop Down")
 
     def verifyTextLogs(self, logs1, logs):
-        db = self.dbGetElement(logs1, logs)
+        db = self.DBGetElement(logs1, logs)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -139,7 +139,7 @@ class Logs(BasePage):
         return result
 
     def verifyTextName(self, logs2, name):
-        db = self.dbGetElement(logs2, name)
+        db = self.DBGetElement(logs2, name)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -153,7 +153,7 @@ class Logs(BasePage):
         return result
 
     def verifyTextDateTime(self, logs3, datetime):
-        db = self.dbGetElement(logs3, datetime)
+        db = self.DBGetElement(logs3, datetime)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -166,7 +166,7 @@ class Logs(BasePage):
         return result
 
     def verifyTextStatus(self, logs4, status):
-        db = self.dbGetElement(logs4, status)
+        db = self.DBGetElement(logs4, status)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -179,7 +179,7 @@ class Logs(BasePage):
         return result
 
     def verifyTextAbsentees(self, logs5, absentees):
-        db = self.dbGetElement(logs5, absentees)
+        db = self.DBGetElement(logs5, absentees)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -192,7 +192,7 @@ class Logs(BasePage):
         return result
 
     def verifyTextDetail(self, logs6, detail):
-        db = self.dbGetElement(logs6, detail)
+        db = self.DBGetElement(logs6, detail)
         try:
             self.locator = db[0]
             self.locatorType = db[1]

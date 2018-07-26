@@ -29,7 +29,7 @@ class Training(BasePage):
         super().__init__(driver)
 
     def verifySearchbar(self, train, search):
-        db = self.dbGetElement(train, search)
+        db = self.DBGetElement(train, search)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -39,7 +39,7 @@ class Training(BasePage):
         return result
 
     def verifyTextTitlePage(self, train1, page):
-        db = self.dbGetElement(train1, page)
+        db = self.DBGetElement(train1, page)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -52,7 +52,7 @@ class Training(BasePage):
         return result
 
     def verifyTextEmployeeTraining(self, train2, emptrain):
-        db = self.dbGetElement(train2, emptrain)
+        db = self.DBGetElement(train2, emptrain)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -65,7 +65,7 @@ class Training(BasePage):
         return result
 
     def verifyTextTrainingEvaluation(self, train3, evaluation):
-        db = self.dbGetElement(train3, evaluation)
+        db = self.DBGetElement(train3, evaluation)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -78,7 +78,7 @@ class Training(BasePage):
         return result
 
     def verifyTextTrainers(self, train4, trainers):
-        db = self.dbGetElement(train4, trainers)
+        db = self.DBGetElement(train4, trainers)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -91,7 +91,7 @@ class Training(BasePage):
         return result
 
     def verifyTextTrainingEvents(self, train5, events):
-        db = self.dbGetElement(train5, events)
+        db = self.DBGetElement(train5, events)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -104,7 +104,7 @@ class Training(BasePage):
         return result
 
     def verifyTextTrainingNeedsAssessment(self, train6, assess):
-        db = self.dbGetElement(train6, assess)
+        db = self.DBGetElement(train6, assess)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -117,7 +117,7 @@ class Training(BasePage):
         return result
 
     def verifyTextAddNewTraining(self, train7, training):
-        db = self.dbGetElement(train7, training)
+        db = self.DBGetElement(train7, training)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -130,7 +130,7 @@ class Training(BasePage):
         return result
 
     def verifyTextTrainingType(self, train8, traintype):
-        db = self.dbGetElement(train8, traintype)
+        db = self.DBGetElement(train8, traintype)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -143,7 +143,7 @@ class Training(BasePage):
         return result
 
     def verifyTextTableTitle(self, train9, table):
-        db = self.dbGetElement(train9, table)
+        db = self.DBGetElement(train9, table)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -156,7 +156,7 @@ class Training(BasePage):
         return result
 
     def verifyTextTrainingFrom(self, train10, train_frm):
-        db = self.dbGetElement(train10, train_frm)
+        db = self.DBGetElement(train10, train_frm)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -169,7 +169,7 @@ class Training(BasePage):
         return result
 
     def verifyTextTrainingTo(self, train11, train_to):
-        db = self.dbGetElement(train11, train_to)
+        db = self.DBGetElement(train11, train_to)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -182,7 +182,7 @@ class Training(BasePage):
         return result
 
     def verifyTextActions(self, train12, actions):
-        db = self.dbGetElement(train12, actions)
+        db = self.DBGetElement(train12, actions)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -195,7 +195,7 @@ class Training(BasePage):
         return result
 
     def verifyMoreOptions(self, train13, more_options):
-        db = self.dbGetElement(train13, more_options)
+        db = self.DBGetElement(train13, more_options)
         try:
             self.locator = db[0]
             self.locatorType = db[1]

@@ -13,7 +13,7 @@ class SideMenu(BasePage):
         self.driver = driver
 
     def clickSideMenu(self, side, sidemenu):
-        db = self.dbGetElement(side, sidemenu)
+        db = self.DBGetElement(side, sidemenu)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -23,7 +23,7 @@ class SideMenu(BasePage):
         self.util.sleep(3)
 
     def verifyAttendance(self, side1, attendance):
-        db = self.dbGetElement(side1, attendance)
+        db = self.DBGetElement(side1, attendance)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -33,7 +33,7 @@ class SideMenu(BasePage):
         return result
 
     def verifyEmployee(self, side2, emp):
-        db = self.dbGetElement(side2, emp)
+        db = self.DBGetElement(side2, emp)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -43,7 +43,7 @@ class SideMenu(BasePage):
         return result
 
     def verifySupportTicket(self, side3, support):
-        db = self.dbGetElement(side3, support)
+        db = self.DBGetElement(side3, support)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -53,7 +53,7 @@ class SideMenu(BasePage):
         return result
 
     def verifyTraining(self, side4, train):
-        db = self.dbGetElement(side4, train)
+        db = self.DBGetElement(side4, train)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -63,7 +63,7 @@ class SideMenu(BasePage):
         return result
 
     def verifyTimeOff(self, side5, timeoff):
-        db = self.dbGetElement(side5, timeoff)
+        db = self.DBGetElement(side5, timeoff)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -86,7 +86,7 @@ class SideMenu(BasePage):
         self.stat.markFinal("Test_Side Menu", result4, "Verify Time Off")
 
     def verifyTextAttendance(self, side, attendance):
-        db = self.dbGetElement(side, attendance)
+        db = self.DBGetElement(side, attendance)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -99,7 +99,7 @@ class SideMenu(BasePage):
         return result
 
     def verifyTextEmployees(self, side1, emp):
-        db = self.dbGetElement(side1, emp)
+        db = self.DBGetElement(side1, emp)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -112,7 +112,7 @@ class SideMenu(BasePage):
         return result
 
     def verifyTextSupportTicket(self, side2, support):
-        db = self.dbGetElement(side2, support)
+        db = self.DBGetElement(side2, support)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -125,7 +125,7 @@ class SideMenu(BasePage):
         return result
 
     def verifyTextTraining(self, side3, train):
-        db = self.dbGetElement(side3, train)
+        db = self.DBGetElement(side3, train)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -138,7 +138,7 @@ class SideMenu(BasePage):
         return result
 
     def verifyTextTimeOff(self, side4, timeoff):
-        db = self.dbGetElement(side4, timeoff)
+        db = self.DBGetElement(side4, timeoff)
         try:
             self.locator = db[0]
             self.locatorType = db[1]

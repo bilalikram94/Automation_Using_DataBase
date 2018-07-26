@@ -27,7 +27,7 @@ class Absentees(BasePage):
         self.driver = driver
 
     def clickAbsentees(self, AbsenteesT, absentees):
-        db = self.dbGetElement(AbsenteesT, absentees)
+        db = self.DBGetElement(AbsenteesT, absentees)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -36,7 +36,7 @@ class Absentees(BasePage):
         self.elementClick(self.locator, self.locatorType)
 
     def verifyLog(self, Absentees1, AbsenteesC):
-        db = self.dbGetElement(Absentees1, AbsenteesC)
+        db = self.DBGetElement(Absentees1, AbsenteesC)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -46,7 +46,7 @@ class Absentees(BasePage):
         return result
 
     def verifyDetails(self, Absentees2, detail):
-        db = self.dbGetElement(Absentees2, detail)
+        db = self.DBGetElement(Absentees2, detail)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -56,7 +56,7 @@ class Absentees(BasePage):
         return result
 
     def verifyMoreOptions(self, Absentees3, moreoptions):
-        db = self.dbGetElement(Absentees3, moreoptions)
+        db = self.DBGetElement(Absentees3, moreoptions)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -66,7 +66,7 @@ class Absentees(BasePage):
         return result
 
     def verifySearchBar(self, Absentees4, searchbar):
-        db = self.dbGetElement(Absentees4, searchbar)
+        db = self.DBGetElement(Absentees4, searchbar)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -76,7 +76,7 @@ class Absentees(BasePage):
         return result
 
     def verifyAddBtn(self, Absentees5, addnew):
-        db = self.dbGetElement(Absentees5, addnew)
+        db = self.DBGetElement(Absentees5, addnew)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -86,7 +86,7 @@ class Absentees(BasePage):
         return result
 
     def verifyTable(self, Absentees7, table):
-        db = self.dbGetElement(Absentees7, table)
+        db = self.DBGetElement(Absentees7, table)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -96,7 +96,7 @@ class Absentees(BasePage):
         return result
 
     def waitForTable(self, Absentees6, table):
-        db = self.dbGetElement(Absentees6, table)
+        db = self.DBGetElement(Absentees6, table)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -122,7 +122,7 @@ class Absentees(BasePage):
         self.stat.markFinal("Test_Absentees", result5, "Verify Table")
 
     def verifyTextAbsentees(self, absentees, absenteesC):
-        db = self.dbGetElement(absentees, absenteesC)
+        db = self.DBGetElement(absentees, absenteesC)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -135,7 +135,7 @@ class Absentees(BasePage):
         return result
 
     def verifyTextDetail(self, absentees1, detail):
-        db = self.dbGetElement(absentees1, detail)
+        db = self.DBGetElement(absentees1, detail)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -148,7 +148,7 @@ class Absentees(BasePage):
         return result
 
     def verifyTextLogs(self, absentees2, logs):
-        db = self.dbGetElement(absentees2, logs)
+        db = self.DBGetElement(absentees2, logs)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -161,7 +161,7 @@ class Absentees(BasePage):
         return result
 
     def verifyTextDepartment(self, absentees3, department):
-        db = self.dbGetElement(absentees3, department)
+        db = self.DBGetElement(absentees3, department)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -174,7 +174,7 @@ class Absentees(BasePage):
         return result
 
     def verifyTextName(self, absentees4, name):
-        db = self.dbGetElement(absentees4, name)
+        db = self.DBGetElement(absentees4, name)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -187,7 +187,7 @@ class Absentees(BasePage):
         return result
 
     def verifyTextPhone(self, absentees5, phone1):
-        db = self.dbGetElement(absentees5, phone1)
+        db = self.DBGetElement(absentees5, phone1)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -200,7 +200,7 @@ class Absentees(BasePage):
         return result
 
     def verifyTextPhone2(self, absentees6, phone2):
-        db = self.dbGetElement(absentees6, phone2)
+        db = self.DBGetElement(absentees6, phone2)
         try:
             self.locator = db[0]
             self.locatorType = db[1]

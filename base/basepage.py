@@ -20,6 +20,7 @@ import pymysql.cursors
 
 class BasePage(SeleniumDriver):
     def __init__(self, driver):
+
         """
         Inits BasePage class
         Returns:
@@ -45,7 +46,7 @@ class BasePage(SeleniumDriver):
             print_stack()
             return False
 
-    def dbGetElement(self, tablename, name):
+    def DBGetElement(self, tablename, name):
         # Connect to the database
         connection = pymysql.connect(host='localhost',
                                      user='bilal',

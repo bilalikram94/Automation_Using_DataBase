@@ -26,7 +26,7 @@ class NewEmployee(BasePage):
         super().__init__(driver)
 
     def verifyFirstName(self, newemp, name):
-        db = self.dbGetElement(newemp, name)
+        db = self.DBGetElement(newemp, name)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -36,7 +36,7 @@ class NewEmployee(BasePage):
         return result
 
     def verifyLastName(self, newemp1, lname):
-        db = self.dbGetElement(newemp1, lname)
+        db = self.DBGetElement(newemp1, lname)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -46,7 +46,7 @@ class NewEmployee(BasePage):
         return result
 
     def verifyEmployeeCard(self, newemp2, empcard):
-        db = self.dbGetElement(newemp2, empcard)
+        db = self.DBGetElement(newemp2, empcard)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -56,7 +56,7 @@ class NewEmployee(BasePage):
         return result
 
     def verifyGender(self, newemp3, gender):
-        db = self.dbGetElement(newemp3, gender)
+        db = self.DBGetElement(newemp3, gender)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -66,7 +66,7 @@ class NewEmployee(BasePage):
         return result
 
     def verifyDateOfJoining(self, newemp4, doj):
-        db = self.dbGetElement(newemp4, doj)
+        db = self.DBGetElement(newemp4, doj)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -76,7 +76,7 @@ class NewEmployee(BasePage):
         return result
 
     def verifyDepartment(self, newemp5, depart):
-        db = self.dbGetElement(newemp5, depart)
+        db = self.DBGetElement(newemp5, depart)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -86,7 +86,7 @@ class NewEmployee(BasePage):
         return result
 
     def verifyDesignation(self, newemp6, design):
-        db = self.dbGetElement(newemp6, design)
+        db = self.DBGetElement(newemp6, design)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -96,7 +96,7 @@ class NewEmployee(BasePage):
         return result
 
     def verifyReportingPerson(self, newemp7, report):
-        db = self.dbGetElement(newemp7, report)
+        db = self.DBGetElement(newemp7, report)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -106,7 +106,7 @@ class NewEmployee(BasePage):
         return result
 
     def verifyTaxRule(self, newemp8, tax):
-        db = self.dbGetElement(newemp8, tax)
+        db = self.DBGetElement(newemp8, tax)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -116,7 +116,7 @@ class NewEmployee(BasePage):
         return result
 
     def verifyUserRole(self, newemp9, urole):
-        db = self.dbGetElement(newemp9, urole)
+        db = self.DBGetElement(newemp9, urole)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
@@ -128,7 +128,7 @@ class NewEmployee(BasePage):
         return result
 
     def verifyPolicyType(self, newemp10, policy):
-        db = self.dbGetElement(newemp10, policy)
+        db = self.DBGetElement(newemp10, policy)
         try:
             self.locator = db[0]
             self.locatorType = db[1]
