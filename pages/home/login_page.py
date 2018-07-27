@@ -8,6 +8,8 @@ from utilities.read_data import getCVSData
 
 class LoginPage(BasePage):
     log = cl.customLogger(logging.DEBUG)
+    locator = None
+    locatorType = None
 
     # Locators
     _login_link = "Login"  # By Link-Text
@@ -25,49 +27,116 @@ class LoginPage(BasePage):
         super().__init__(driver)
         self.driver = driver
 
-    def enterEmail(self, email, _email):
-        self.sendKeys(email, _email)
+    def enterEmail(self, email, login, _email):
+        db = self.DBGetElement(login, _email)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table Name or Column Name is Incorrect !!!")
+        self.sendKeys(email, self.locator, self.locatorType)
 
-    def enterPassword(self, password, _password):
-        self.sendKeys(password, _password)
+    def enterPassword(self, password, login2, _password):
+        db = self.DBGetElement(login2, _password)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table Name or Column Name is Incorrect")
+        self.sendKeys(password, self.locator, self.locatorType)
 
-    def clickLoginBtn(self, lgnBtn, path):
-        self.elementClick(lgnBtn, path)
+    def clickLoginBtn(self, login3, loginBtn):
+        db = self.DBGetElement(login3, loginBtn)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or Column Name is Incorrect !!!")
+        self.elementClick(self.locator, self.locatorType)
 
-    def verifyLogin(self, path1, select):
-        result = self.isElementPresent(path1, select)
+    def verifyLogin(self, login4, vlogin):
+        db = self.DBGetElement(login4, vlogin)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or Column name Incorrect !!!")
+        result = self.isElementPresent(self.locator, self.locatorType)
         return result
 
-    def verifyLoginFailed(self):
-        result = self.isElementPresent(self._failed_login, locatorType='css')
+    def verifyLoginFailed(self, login5, flogin):
+        db = self.DBGetElement(login5, flogin)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or column name Incorrect !!!")
+        result = self.isElementPresent(self.locator, self.locatorType)
         return result
 
-    def verifyLoginFailed1(self, path1, select):
-        result = self.isElementPresent(path1, select)
+    def verifyLoginFailed1(self, login6, logo):
+        db = self.DBGetElement(login6, logo)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or column name Incorrect !!!")
+        print(db)
+        result = self.isElementPresent(self.locator, self.locatorType)
         return result
 
-    def userImage(self, xpath, selector):
-        self.elementClick(xpath, selector)
+    def userImage(self, login7, image):
+        db = self.DBGetElement(login7, image)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or column name Incorrect !!!")
+        self.elementClick(self.locator, self.locatorType)
         self.util.sleep(2)
 
-    def logoutButton(self):
-        self.elementClick(self._logout_button, locatorType='link')
+    def logoutButton(self, login8, logout):
+        db = self.DBGetElement(login8, logout)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or column name Incorrect !!!")
+        self.elementClick(self.locator, self.locatorType)
         self.util.sleep(2)
 
-    def verifyLogoutSuccess(self):
+    def verifyLogoutSuccess(self, login9, forgot):
         time.sleep(2)
-        text = self.getText(self._forget_password, locatorType='link')
-        result = self.util.verifyTextContains("Forget Password?", text)
+        db = self.DBGetElement(login9, forgot)
+        try:
+            self.locator = db[0]
+            self.locatorType = db[1]
+        except:
+            self.log.error("### Table name or Column Name is Incorrect !!!")
+        exceptedText = self.getText(self.locator, self.locatorType)
+        db1 = self.DBText(login9, forgot)
+        actualText = db1[0]
+        result = self.util.verifyTextContains(actualText, exceptedText)
         return result
 
-    def login(self, _email, email, _password, password, lgnBtn, path):
-        self.enterEmail(_email, email)
-        self.enterPassword(_password, password)
-        self.clickLoginBtn(lgnBtn, path)
+    def invalidLogin(self, email, login, _email, password, login2, _password, login3, loginBtn, login6, logo):
+        time.sleep(3)
+        self.enterEmail(email, login, _email)
+        self.enterPassword(password, login2, _password)
+        self.clickLoginBtn(login3, loginBtn)
+        result = self.verifyLoginFailed1(login6, logo)
+        self.stat.markFinal("Test_invalid Login", result, "Invalid Login")
 
-    def logout(self, xpath, selector):
-        self.userImage(xpath, selector)
-        self.logoutButton()
+    def validLogin(self, email, login, _email, password, login2, _password, login3, loginBtn, login4, vlogin):
+        self.enterEmail(email, login, _email)
+        self.enterPassword(password, login2, _password)
+        self.clickLoginBtn(login3, loginBtn)
+        result = self.verifyLogin(login4, vlogin)
+        self.stat.markFinal("Test_valid Login", result, "Valid Login")
+
+    def logout(self, login7, image, login8, logout):
+        self.userImage(login7, image)
+        self.logoutButton(login8, logout)
 
     def conflogin(self):
         self.sendKeys("networks@cubixlabs.com", self._email_field)

@@ -15,12 +15,16 @@ class TestAbsentees(unittest.TestCase):
     @pytest.mark.run(order=1)
     @data(*getCVSData("/home/bilalikram/PycharmProjects/Automation_Using_Database/absenteesPath.csv"))
     @unpack
-    def test_Absentees(self, AbsenteesT, absentees, Absentees1, logsC, Absentees2, detail, Absentees3, moreoptions, Absentees4, searchbar, Absentees5, addnew, Absentees6, table, Absentees7, table1):
-        self.abs.absenteesSmoke(AbsenteesT, absentees, Absentees1, logsC, Absentees2, detail, Absentees3, moreoptions, Absentees4, searchbar, Absentees5, addnew, Absentees6, table, Absentees7, table1)
+    def test_Absentees(self, AbsenteesT, absentees, Absentees1, logsC, Absentees2, detail, Absentees3, moreoptions,
+                       Absentees4, searchbar, Absentees5, addnew, Absentees6, table, Absentees7, table1):
+        self.abs.absenteesSmoke(AbsenteesT, absentees, Absentees1, logsC, Absentees2, detail, Absentees3, moreoptions,
+                                Absentees4, searchbar, Absentees5, addnew, Absentees6, table, Absentees7, table1)
 
 
     @pytest.mark.run(order=2)
     @data(*getCVSData("/home/bilalikram/PycharmProjects/Automation_Using_Database/absenteesText.csv"))
     @unpack
-    def test_AbsenteesText(self, absentees, absenteesC, absentees1, detail, absentees2, logs, absentees3, department, absentees4, name, absentees5, phone1, absentees6, phone2):
-        self.abs.AbsenteesText(absentees, absenteesC, absentees1, detail, absentees2, logs, absentees3, department, absentees4, name, absentees5, phone1, absentees6, phone2)
+    def test_AbsenteesText(self, absentees, absenteesC, absentees1, detail, absentees2, logs, absentees3, department,
+                           absentees4, name, absentees5, phone1, absentees6, phone2):
+        self.abs.AbsenteesText(absentees, absenteesC, absentees1, detail, absentees2, logs, absentees3, department,
+                               absentees4, name, absentees5, phone1, absentees6, phone2)
