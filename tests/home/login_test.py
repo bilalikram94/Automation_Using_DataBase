@@ -25,23 +25,22 @@ class LoginTests(unittest.TestCase, LoginPage):
         If assert fails, it stops current test execution and moves to the next test method.
         """
 
-    @pytest.mark.run(order=2)
+    @pytest.mark.second
     @data(*getCVSData("/home/bilalikram/PycharmProjects/Automation_Using_Database/loginPageXpath.csv"))
     @unpack
-    def test_Login(self, email, login, _email, password, login2, _password,
-                          login3, loginBtn, login6, logo):
+    def test_second(self, email, login, _email, password, login2, _password, login3, loginBtn, login6, logo):
         self.lp.invalidLogin(email, login, _email, password, login2, _password, login3, loginBtn, login6, logo)
 
-    # @pytest.mark.run(order=2)
-    # @data(*getCVSData("/home/bilalikram/PycharmProjects/Automation_Using_Database/validlogin.csv"))
-    # @unpack
-    # def test_validLogin(self, email, login, _email, password, login2, _password, login3, loginBtn, login4, vlogin):
-    #     self.lp.validLogin(email, login, _email, password, login2, _password, login3, loginBtn, login4, vlogin)
+    @pytest.mark.last
+    @data(*getCVSData("/home/bilalikram/PycharmProjects/Automation_Using_Database/validlogin.csv"))
+    @unpack
+    def test_third(self, email, login, _email, password, login2, _password, login3, loginBtn, login4, vlogin):
+        self.lp.validLogin(email, login, _email, password, login2, _password, login3, loginBtn, login4, vlogin)
 
-    @pytest.mark.run(order=1)
+    @pytest.mark.first
     @data(*getCVSData("/home/bilalikram/PycharmProjects/Automation_Using_Database/logout.csv"))
     @unpack
-    def test_LoginLogout(self, login7, image, login8, logout, login9, forgot):
+    def test_one(self, login7, image, login8, logout, login9, forgot):
         self.lp.logout(login7, image, login8, logout)
         result = self.lp.verifyLogoutSuccess(login9, forgot)
-        self.ts.mark(result, "Logout successful")
+        self.ts.markFinal("Test Valid Logout", result, "Logout successful")
